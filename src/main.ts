@@ -20,6 +20,9 @@ Vue.config.productionTip = false;
 // web-component를 호출하는 container element를 찾기 위한
 // host interface 설정
 declare global {
+  interface Window {
+    serviceApp?: Vue;
+  }
   export interface INode extends Node {
     host?: any;
   }
