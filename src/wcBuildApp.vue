@@ -50,6 +50,10 @@ export default class WcApp extends App {
     return null;
   }
 
+  protected created() {
+    Vue.prototype.$app = this;
+  }
+
   protected mounted() {
     // abstract router 관련 적용
     this.$router.push('/');
