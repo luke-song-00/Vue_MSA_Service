@@ -45,7 +45,7 @@ export default class WcApp extends App {
   public get wcHost() {
     const parentNode = this.$el.parentNode as INode;  // shadow-root
     if (parentNode.host) {
-      return parentNode.host;
+      return parentNode.host;   // HTMLElement
     }
     return null;
   }
@@ -56,7 +56,9 @@ export default class WcApp extends App {
 
   protected mounted() {
     // abstract router 관련 적용
-    this.$router.push('/');
+    if (this.$route.name === null || this.$route.name !== 'home') {
+      this.$router.push('/');
+    }
 
     // web-component 호출한 container 에 mounted event emit
     // service 에서는 App component를 보내고
