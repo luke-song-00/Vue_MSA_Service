@@ -5,7 +5,7 @@
     <br>
     <h2 @click="$router.push('/about')">push to service-1 about.vue</h2>
     <br><br>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld ref="hw" msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
@@ -17,6 +17,9 @@ export default {
   name: 'home',
   components: {
     HelloWorld,
+  },
+  mounted() {
+    this.$app.$emit('passComponent', this.$refs.hw);
   },
 };
 </script>

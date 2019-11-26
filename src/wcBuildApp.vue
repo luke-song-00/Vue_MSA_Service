@@ -15,7 +15,6 @@ const router = new VueRouter({
   routes,
 });
 
-
 /**
  * WcApp 은 src/App.vue 를 extends 해서 만든다.
  * 기본적으로 App.vue 에서 동작하던 걸 모두 수행 하고,
@@ -29,7 +28,6 @@ const router = new VueRouter({
  * main.ts 를 거치지 않기 때문에,
  * main.ts에서 수행하던 것들을 추가로 넣어줘야 한다.
  * (router 설정, store 설정 등등);
- *
  * typescript 관련 declare 설정은... 일단 보류
  */
 @Component({
@@ -56,7 +54,7 @@ export default class WcApp extends App {
 
   protected mounted() {
     // abstract router 관련 적용
-    if (this.$route.name === null || this.$route.name !== 'home') {
+    if (this.$route.name === null) {
       this.$router.push('/');
     }
 
