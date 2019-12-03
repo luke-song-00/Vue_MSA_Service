@@ -5,7 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --mode production --target wc-async --name service-1 src/wcBuildApp.vue --inline-vue",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "styleguide": "vue-cli-service styleguidist",
+    "styleguide:build": "vue-cli-service styleguidist:build"
   },
   "dependencies": {
     "@types/body-scroll-lock": "^2.6.1",
@@ -35,6 +37,7 @@
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.0",
     "typescript": "~3.5.3",
+    "vue-cli-plugin-styleguidist": "^4.0.8",
     "vue-template-compiler": "^2.6.10"
   }
 }
